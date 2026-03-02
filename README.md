@@ -89,12 +89,45 @@ All core infrastructure components were provisioned using Terraform:
 
 The Terraform configuration enables reproducible infrastructure deployment and clear separation of network and compute resources.
 
+
 ---
 
-## Future Enhancements
+## Getting Started
 
-- Cloud Armor WAF integration
-- Secret Manager integration
-- CI/CD pipeline (Cloud Build / GitHub Actions)
-- Automated security scanning
-- Centralized logging & monitoring integration
+### 1. Infrastructure Deployment
+
+
+- Navigate to the terraform directory:
+-     cd terraform
+- Initialize Terraform:
+-     terraform init
+- Preview the deployment:
+-     terraform plan
+- Apply the infrastructure:
+-     terraform apply
+
+
+---
+
+### 2. Application Configuration
+
+- Set environment variables:
+-     export DB_HOST=10.10.20.3
+-     export DB_USER=appuser
+-     export DB_PASS=your_password
+-     export DB_NAME=posture
+
+---
+
+
+### 3. Run the Application
+
+- Install dependencies:
+-     pip install -r requirements.txt
+
+- Run locally:
+-      python main.py
+- Or using Docker:
+-     docker build -t cloudsec-app . 
+-     docker run -p 8080:8080 --env-file .env cloudsec-app
+

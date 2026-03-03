@@ -40,7 +40,7 @@ Private MariaDB (db-1)
 - SSH restricted via IAP only
 - OS Login enabled at project level
 - Database isolated in private subnet
-- No hardcoded credentials
+- VPC Flow Logs enabled for traffic visibility
 - Environment-based configuration
 - Infrastructure managed via Terraform
 
@@ -73,6 +73,12 @@ This design prioritizes exposure minimization and lateral movement prevention wi
 - TLS termination at load balancer
 - Security headers enforced at reverse proxy layer
 
+### Visibility Layer
+
+- VPC Flow Logs enabled to monitor internal traffic patterns
+- Designed to support detection of abnormal lateral movement between tiers
+
+  
 ---
 
 ## Infrastructure as Code
